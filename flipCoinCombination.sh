@@ -1,7 +1,6 @@
-#!/bin/bash -x
+#!/bin/bash -x 
 
-echo "Enter number of flips :"
-read n
+n=21
 unit=1
 Heads=0
 Tails=0
@@ -18,11 +17,14 @@ done
 if [[ $Heads -gt $Tails ]]
 then
 	echo Heads Won
-
+	Res=$(($Heads-$Tails))
+	echo By $Res Heads Won
 elif [[ $Tails -gt $Heads ]]
 then
 	echo Tails Won
+	Res=$(($Tails-$Heads))
+	echo By $Res Tails Won
 elif [[ $Heads -eq $Tails ]]
 then
-	echo Tails=Heads
+	echo Tails and Heads are Tie
 fi
